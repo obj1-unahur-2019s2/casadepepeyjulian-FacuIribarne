@@ -27,3 +27,40 @@ object plancha {
 	method esComida() { return false }
 	method esElectrodomestico() { return true }	
 }
+
+object kiloMila {
+	var property precio = 260
+	method esComida() { return true }
+	method esElectrodomestico() { return false }
+}
+object botellaDeTomate {
+	var property precio = 90
+	method esComida() { return true }
+	method esElectrodomestico() { return false }
+}
+object microondas {
+	var property precio = 4200
+	method esComida() { return false }
+	method esElectrodomestico() { return true}
+}
+object kiloDeCebollas {
+	var property precio = 25
+	method esComida() { return true }
+	method esElectrodomestico() { return false }
+}
+object compu {
+	var property precio = 500
+}
+
+object packComida{
+	var plato
+	var aderezo
+	method configurar(unPlato,unAderezo){
+		plato = unPlato
+		aderezo = unAderezo
+	}
+	
+	method precio(){
+		return plato.precio()+ aderezo.precio()
+	}
+}

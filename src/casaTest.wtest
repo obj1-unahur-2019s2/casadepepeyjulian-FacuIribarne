@@ -1,0 +1,38 @@
+import casa.*
+import cosas.*
+describe "test de casa" {
+	
+	test "comprar cosas"{
+		casaDePepeYJulian.comprar(heladera)
+		casaDePepeYJulian.comprar(tiraDeAsado)
+		assert.equals([heladera,tiraDeAsado],casaDePepeYJulian.cantidadDeCosasCompradas())	
+	}
+	test "tiene comida"{
+		casaDePepeYJulian.comprar(heladera)
+		casaDePepeYJulian.comprar(tiraDeAsado)
+		assert.that(casaDePepeYJulian.tieneComida())
+	}
+	test "vieneDeEquiparse"{
+		casaDePepeYJulian.comprar(heladera)
+		assert.that(casaDePepeYJulian.vieneDeEquiparse())
+	}
+	test "esDerrochona"{
+		casaDePepeYJulian.comprar(heladera)
+		casaDePepeYJulian.comprar(tiraDeAsado)
+		assert.that(casaDePepeYJulian.esDerrochona())
+	}
+	test "compraMasCara"{
+		casaDePepeYJulian.comprar(heladera)
+		casaDePepeYJulian.comprar(tiraDeAsado)
+		assert.equals(heladera,casaDePepeYJulian.compraMasCara())
+	}
+	test "electrodomesticosComprados"{
+		casaDePepeYJulian.comprar(heladera)
+		assert.equals([heladera],casaDePepeYJulian.electrodomesticosComprados())
+	}
+	test "malaEpoca"{
+		casaDePepeYJulian.comprar(heladera)
+		casaDePepeYJulian.comprar(tiraDeAsado)
+		assert.equals([tiraDeAsado],casaDePepeYJulian.malaEpoca())
+		}
+	}
