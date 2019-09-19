@@ -63,4 +63,22 @@ object packComida{
 	method precio(){
 		return plato.precio()+ aderezo.precio()
 	}
+	
+	method esComida() { return true }
+	method esElectrodomestico() { return false}
+}
+object packRegalo{
+		var componentes=[]		
+		method agregarCosas(cosa) {
+			componentes.add(cosa)
+		}
+		method precio() {
+			return componentes.sum({cosa => cosa.precio()}) * 0.8
+		}
+	method esComida(){
+		return componentes.all({cosa => cosa.esComida()})
+	}
+	method esElectrodomestico(){
+		return componentes.any({cosa => cosa.esElectrodomestico()})
+	}
 }
